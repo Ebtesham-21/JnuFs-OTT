@@ -1,12 +1,29 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { NextPageContext } from 'next';
+import {signOut} from 'next-auth/react';
 
-const inter = Inter({ subsets: ['latin'] })
+export async function getServerSideProps(context:NextPageContext) {
+  const session = await getSession(context);
+
+  if(!session) {
+    return {
+      redirect: {
+        destination: '/auth',
+        permanent: false,
+      }
+    }
+  }
+  return{
+    props: {}
+  }
+
+}
 
 export default function Home() {
   return (
     <>
     <h1>NEtFLIX CLONE</h1>
+    <button className='h-18 w-full bg-white' onClick={() => signOut()}>LogOut</button>
+
     </>
   )
 }
