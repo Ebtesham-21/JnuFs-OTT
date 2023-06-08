@@ -95,7 +95,9 @@ const Auth = () => {
                          </button>
                          <div className='flex flex-row items-center gap-4 mt-8 justify-center'
                          >
-                            <div className='w-10
+                            <div
+                            onClick={() => signIn('google', {callbackUrl: '/'})}
+                            className='w-10
                             h-10
                             bg-white
                             rounded-full
@@ -110,7 +112,9 @@ const Auth = () => {
                                
 
                             </div>
-                            <div className='w-10
+                            <div 
+                            onClick={() => signIn('github', {callbackUrl: '/'})}
+                            className='w-10
                             h-10
                             bg-white
                             rounded-full
