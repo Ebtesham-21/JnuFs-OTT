@@ -20,11 +20,13 @@ export async function getServerSideProps(context:NextPageContext) {
 }
 
 export default function Home() {
-  const { } = useCurrentUser();
+  const { data: user } = useCurrentUser();
+
 
   return (
     <>
     <h1>NEtFLIX CLONE</h1>
+    <p className='text-white '>Logged in as : {user?.name}</p>
     <button className='h-18 w-full bg-white' onClick={() => signOut()}>LogOut</button>
 
     </>
