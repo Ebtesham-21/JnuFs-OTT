@@ -1,6 +1,20 @@
+import MobileMenu from "./MobileMenu";
 import NavbarItem from "./Navbaritem";
+import {BsChevronDown, BsSearch, BsBell} from 'react-icons/bs';
+import {useCallback, useState} from 'react';
+import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [showAccountMenu, setShowAccountMenu] = useState(false);
+    const toggleMobileMenu = useCallback(() => {
+        setShowMobileMenu((current) => !current);
+
+    }, []);
+    const toggleAccountMenu = useCallback(() => {
+        setShowAccountMenu((current) => !current);
+
+    }, []);
    
     return (
         <nav className="w-full fixed z-40">
@@ -27,8 +41,31 @@ const Navbar = () => {
                     <NavbarItem label="My List"/>
                     <NavbarItem label="Browse by Language" />
                 </div>
-                <div className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+                <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
                     <p className="text-white text-sm">Browse</p>
+                    <BsChevronDown className="text-white w-4  transition"/>
+                        <MobileMenu visible={showMobileMenu}/>
+
+                </div>
+                <div className="flex flex-row ml-auto gap-7 items-center">
+                    <div className="text-gray-200  hover:text-gray-300 cursor-pointer transition">
+                        <BsSearch  />
+
+                    </div>
+                    <div className="text-gray-200  hover:text-gray-300 cursor-pointer transition">
+                        <BsBell  />
+
+                    </div>
+                    <div className="flex flex-row items-center gap-2 cursor-pointer relative">
+
+                        <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
+                            <img src="/images/default-blue.png" alt="" />
+
+                        </div>
+                        <BsChevronDown className="text-white w-4  transition"/>
+                        <AccountMenu visible={showAccountMenu}/>
+
+                    </div>
 
                 </div>
                 
