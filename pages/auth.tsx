@@ -65,7 +65,9 @@ const Auth = () => {
                         <img src="/images/logo.png" alt="logo" className="h-16" />
                         <h2 className="text-white text-4xl mb-8 font-semibold">{variant == 'login' ? 'Sign in' : 'Register '}</h2>
                         <div className="flex flex-col gap-4">
-                            {variant == 'register' && (     <Input
+                            {variant == 'register' && (     
+                           <Input
+                           type="string"
                            label="name"
                            onChange={(ev:any) => setName(ev.target.value)}
                            id="name"
