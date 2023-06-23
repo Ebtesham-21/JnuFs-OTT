@@ -35,13 +35,14 @@ const Watch = () => {
 
             </nav>
             <video
+            src={data?.videoUrl}
             autoPlay
             controls
             className='h-full w-full'
-             src={data?.videoUrl}>
+             >
 
             </video>
-
+            {/* <iframe src={data?.videoUrl} width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"></iframe> */}
         </div>
     )
 }

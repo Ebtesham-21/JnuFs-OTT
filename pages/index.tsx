@@ -1,6 +1,7 @@
 import Billboard from '@/components/Billboard';
 import MovieList from '@/components/MovieList';
 import Navbar from '@/components/Navbar';
+import InfoModal from '@/components/infoModal';
 import useCurrentUser from '@/hooks/useCurrentuser';
 import useFavorites from '@/hooks/useFavorites';
 import useMovieList from '@/hooks/useMovieList';
@@ -32,6 +33,7 @@ export default function Home() {
 
   return (
     <>
+      <InfoModal visible onClose={() => {}}/>
       <Navbar />
       <Billboard/>
     
