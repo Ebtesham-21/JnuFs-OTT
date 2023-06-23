@@ -67,7 +67,7 @@ const Auth = () => {
                         <div className="flex flex-col gap-4">
                             {variant == 'register' && (     
                            <Input
-                           type="string"
+                           type="text"
                            label="name"
                            onChange={(ev:any) => setName(ev.target.value)}
                            id="name"
