@@ -42,6 +42,8 @@ const Watch = () => {
              >
 
             </video>
+            {/* <iframe src="https://player.vimeo.com/video/796058029?h=81e7ab4435"   allow="autoplay; fullscreen; picture-in-picture" ></iframe> */}
+
             {/* <iframe src={data?.videoUrl} width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"></iframe> */}
         </div>
     )

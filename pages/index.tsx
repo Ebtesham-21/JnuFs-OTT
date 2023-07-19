@@ -43,6 +43,10 @@ export default function Home() {
        <MovieList title='Trending Now' data={movies} />
        <MovieList title='My List' data={favorites} />
       </div>
+      <div>
+      <iframe src="https://player.vimeo.com/video/796058029?h=81e7ab4435"  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+      </div>
       
 
    
